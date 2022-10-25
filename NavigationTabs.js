@@ -1,43 +1,37 @@
-import React, { useState } from 'react'
-import MainContents from './MainContents'
-import { faKitchenSet, faPlus } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useContext, useState } from 'react'
 import RecipeArchives from './RecipeArchives'
 import RecipeForm from './RecipeForm'
-
-
+import { setComponentContext } from '../App'
+import { faKitchenSet, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NavigationTabs = () => {
-  const [tab, setTab] = useState(<RecipeArchives />)
-  
+  const setComponent = useContext(setComponentContext)
   const handleTabSet = (component) => {
-    setTab(component)
+    setComponent(component)
   }
 
   return (
-    <div className="container">
-      <nav className="navigation">
-        <ul className="navigation-list">
-          <li className="navigation-item">
-            <button
-              className="navigation-button"
-              onClick={() => handleTabSet(<RecipeArchives />)}
-            >
-              <FontAwesomeIcon icon={faKitchenSet} />
-            </button>
-          </li>
-          <li className="navigation-item">
-            <button
-              className="navigation-button"
-              onClick={() => handleTabSet(<RecipeForm />)}
-            >
-              <FontAwesomeIcon icon={faPlus} />
-            </button>
-          </li>
-        </ul>
-      </nav>
-      <MainContents tabComponent={tab} />
-    </div>
+    <nav className="navigation">
+      <ul className="navigation-list">
+        <li className="navigation-item">
+          <button
+            className="navigation-button"
+            onClick={() => handleTabSet(<RecipeArchives />)}
+          >
+            <FontAwesomeIcon icon={faKitchenSet} />
+          </button>
+        </li>
+        <li className="navigation-item">
+          <button
+            className="navigation-button"
+            onClick={() => handleTabSet(<RecipeForm />)}
+          >
+            <FontAwesomeIcon icon={faPlus} />
+          </button>
+        </li>
+      </ul>
+    </nav>
   )
 }
 

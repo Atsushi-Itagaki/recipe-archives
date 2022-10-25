@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-const MainContents = ({tabComponent}) => {
+const MainContents = ({ component }) => {
   return (
     <main className="main">
-      {tabComponent}
+      {component}
     </main>
   )
 }

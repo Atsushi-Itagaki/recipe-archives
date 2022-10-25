@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RecipeItem = ({ data }) => {
+const RecipeItem = ({ data }, {setRecipeData}) => {
   const handleDeleteRecipe = (e) => {
     e.preventDefault()
 
@@ -14,10 +14,6 @@ const RecipeItem = ({ data }) => {
     .catch((error) => {
       console.log('Error:', error)
     })
-
-    console.log(data.recipe_ID)
-    console.log(e.target.id)
-    console.log('削除しました。')
   }
 
   return (
