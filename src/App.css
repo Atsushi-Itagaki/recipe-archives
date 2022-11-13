@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/* ----- reset.css ----- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  ;
+}
+
+li {
+  list-style: none;
+}
+
+input,
+textarea,
+select {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+/* ----- DefaultStyle : SP ----- */
+
+/* ----------------------------------------
+  App
+---------------------------------------- */
+.app {
+  text-align: center;
+}
+
+/* ----------------------------------------
+  AppHeader
+---------------------------------------- */
+
+/* ----------------------------------------
+  MainContents
+---------------------------------------- */
+.container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+/* ----------------------------------------
+  PostRecipe_form-parts 共通
+---------------------------------------- */
+.input__field__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 15px;
+  background-color: bisque;
+  border: 2px solid #c6c6c6;
+  border-radius: 5px;
+}
+
+.inputRecipeData__input__field__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.inputRecipeData__input__outer {
+  width: 100%;
+}
+
+.inputRecipeData__input__outer:nth-of-type(odd) {
+  background-color: #ffd198;
+}
+
+/* ----------------------------------------
+  SelectCookingPicture
+---------------------------------------- */
+.selectCookingImage__input__view {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 275px;
+  border: 2px dashed #c6c6c6;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.selectCookingImage__input__view:hover .selectCookingImage__input_icon_add {
+  color: #acacac;
+}
+
+.selectCookingImage__input_icon_add {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 6rem;
+  color: #c6c6c6;
+  transition: all .1s;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.selectCookingImage__selected_Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ----------------------------------------
+  InputRecipeData
+---------------------------------------- */
